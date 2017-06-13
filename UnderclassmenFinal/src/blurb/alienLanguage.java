@@ -22,8 +22,19 @@ public class alienLanguage implements BlurbInterface
 		}
 		else{
 			int startPoint = isWhoozit(blurb, 0);
+			System.out.println(blurb.length());
+			System.out.println(startPoint);
+			System.out.println(isWhatzit(blurb.substring(startPoint +1, blurb.length()), 0));
+			if(isWhatzit(blurb.substring(startPoint, blurb.length()), 0) == -1){
+			
+				return false;
+				
+			}
+			else{
+				return true;
+			}
 		}
-		return false;
+		//return false;
 	}
 	
 	private int isWhoozit(String bleh, int i){
@@ -62,7 +73,15 @@ public class alienLanguage implements BlurbInterface
 	
 	}
 	private int isWhatzit(String bluh, int j){
-		
+		if(bluh.charAt(0) == 'q' && bluh.charAt(1) == 'z' || bluh.charAt(0) == 'q' && bluh.charAt(1) == 'd'){
+			//  return 1;
+		//	 System.out.println("dab");
+			return 0;  
+		  }
+		else{
+			return -1;
+		}
 	}
+	
 	
 }
