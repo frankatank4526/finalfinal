@@ -8,7 +8,6 @@ public class alienLanguage implements BlurbInterface
 	@Override
 	public String generateBlurb()
 	{
-		// TODO Auto-generated method stub
 		return null;
 	}
 
@@ -18,6 +17,7 @@ public class alienLanguage implements BlurbInterface
 		// TODO Auto-generated method stub
 		
 		if(isWhoozit(blurb, 0) == -1){
+		
 			return false;
 		}
 		else{
@@ -25,20 +25,23 @@ public class alienLanguage implements BlurbInterface
 			System.out.println(blurb.length());
 			System.out.println(startPoint);
 			System.out.println(isWhatzit(blurb.substring(startPoint +1, blurb.length()), 0));
-			if(isWhatzit(blurb.substring(startPoint, blurb.length()), 0) == -1){
-			
+			if(isWhatzit(blurb.substring(startPoint + 1, blurb.length()), 0) == -1){
+		//	System.out.println(isWhatzit(blurb.substring(startPoint, blurb.length()), 0));
 				return false;
 				
 			}
-			else{
+//			else if(isWhoozit(blurb, startPoint + 3) == -1){
+//				return false;
+//			}
+			else {
 				return true;
 			}
 		}
 		//return false;
 	}
 	
-	private int isWhoozit(String bleh, int i){
-		
+private int isWhoozit(String bleh, int i){
+		//System.out.println(bleh.charAt(0));
 		int siez = bleh.length();
 	  if(bleh.charAt(i) == 'x' && bleh.charAt(i+1) != 'y'){
 		//  return 1;
